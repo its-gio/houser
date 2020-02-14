@@ -3,7 +3,7 @@ function getHouses(req, res) {
 
   db.getHouses()
     .then(housesArr => res.status(200).json(housesArr))
-    .catch(err => res.status(400).json(err));
+    .catch(err => res.status(500).json(err));
 }
 
 function postHouse(req, res) {
@@ -12,10 +12,20 @@ function postHouse(req, res) {
 
   db.postHouse(name, address, city, state, zipcode, img, monthly_mortgage, desired_rent)
     .then(() => res.sendStatus(200))
-    .catch((err) => res.status(400).json(err));
+    .catch((err) => res.status(500).json(err));
+}
+
+function deleteHouse(req, res) {
+  const { house_id } = req.body;
+  const db = req.app.get("db");
+
+  db.deleteHouse(house_id)
+    .then(() => res.sendStatus(200))
+    .catch(err => res.status(500).json(err));
 }
 
 module.exports = {
   getHouses,
-  postHouse
+  postHouse,
+  deleteHouse
 }
