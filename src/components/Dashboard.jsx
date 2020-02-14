@@ -13,15 +13,28 @@ export default class Dashboard extends Component {
     }
   }
 
-  componentDidMount() {
+  getHouses = () => {
     Axios
       .get("/api/houses")
       .then(res => this.setState({ houses: res.data }))
       .catch(err => console.error(err));
   }
 
+  componentDidMount() {
+    this.getHouses()
+  }
+
+  deleteHouse = (house_id) => {
+    Axios
+      .delete(`/api/house/${house_id}`, )
+      .then(() => {
+        this.getHouses()
+      })
+      .catch(err => console.error(err));
+  }
+
   render() {
-    const houseMap = this.state.houses.map((house, i) => <House key={i} house={house} />)
+    const houseMap = this.state.houses.map((house, i) => <House key={i} deleteHouse={this.deleteHouse} house={house} />)
     return (
       <div>
         <h2>Dashboard</h2>
