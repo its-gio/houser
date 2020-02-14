@@ -21,6 +21,17 @@ VALUES
   ('Meeps', '3451 Dumbarton Road', 'San Francisco', 'California', 94555, 'https://lh3.googleusercontent.com/proxy/9NHSzm-vvUwybixQmIrhhngRW1ORRsCvIhmM-nAyFN_viUrcVtM8uWvxo4fyMLVDqwDVLZ885lSlSrSndYJoBLXmxXGFdJkCj9Tk6DfxmNYo4rQmYqmidoBh0NUyODukKQ', 50, 2000)
 
 
+-- {
+-- 	"name": "Pinky",
+-- 	"address": "Northsouth of the Church",
+-- 	"city": "Dallas",
+-- 	"state": "Texas",
+-- 	"zipcode": 75001,
+-- 	"img": "https://static-11.sinclairstoryline.com/resources/media/0823728d-22e3-468b-b7f4-344257ad5810-large16x9_pvillepinkhousepkg.transfer_frame_597.png?1551398496367",
+-- 	"monthly_mortgage": 1200,
+-- 	"desired_rent": 1500
+-- }
+
 -- CREATE TABLE houses
 -- (
 --   house_id SERIAL PRIMARY KEY,
