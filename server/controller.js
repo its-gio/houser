@@ -16,10 +16,10 @@ function postHouse(req, res) {
 }
 
 function deleteHouse(req, res) {
-  const { house_id } = req.body;
+  const { id } = req.params;
   const db = req.app.get("db");
 
-  db.deleteHouse(house_id)
+  db.deleteHouse(id)
     .then(() => res.sendStatus(200))
     .catch(err => res.status(500).json(err));
 }
