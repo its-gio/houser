@@ -23,9 +23,6 @@ export const UPDATE_RENT = "update_rent";
 
 function reducer(state = initialState, action) {
   const { type, payload } = action;
-
-  console.log(state);
-
   switch (type) {
     case UPDATE_NAME: 
     return {
