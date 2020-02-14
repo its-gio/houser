@@ -1,22 +1,50 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom"
 import Axios from 'axios'
+import store, { UPDATE_NAME, UPDATE_ADDRESS, UPDATE_CITY, UPDATE_STATE, UPDATE_ZIPCODE } from '../../store';
 
 export default class Step1 extends Component {
   constructor() {
     super()
-
+    const reduxState = store.getState();
     this.state = {
-      name: "",
-      address: "",
-      city: "",
-      state: "",
-      zipcode: ""
+      name: reduxState.name,
+      address: reduxState.address,
+      city: reduxState.city,
+      state: reduxState.state,
+      zipcode: reduxState.zipcode
     }
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  saveChanges = () => {
+    store.dispatch({
+      type: UPDATE_NAME,
+      payload: this.state.name
+    })
+
+    store.dispatch({
+      type: UPDATE_ADDRESS,
+      payload: this.state.address
+    })
+
+    store.dispatch({
+      type: UPDATE_CITY,
+      payload: this.state.city
+    })
+
+    store.dispatch({
+      type: UPDATE_STATE,
+      payload: this.state.state
+    })
+
+    store.dispatch({
+      type: UPDATE_ZIPCODE,
+      payload: this.state.zipcode
+    })
   }
 
   clearState = () => {
@@ -42,7 +70,7 @@ export default class Step1 extends Component {
         <input onChange={this.handleChange} type="number" name="zipcode" placeholder="zip code"/>
         <Link to="/wizard/step2"><button>Next Step</button></Link>
 
-        <button onClick={this.complete}>Complete</button>
+        {/* <button onClick={this.complete}>Complete</button> */}
       </div>
     )
   }

@@ -21,6 +21,8 @@ VALUES
   ('Meeps', '3451 Dumbarton Road', 'San Francisco', 'California', 94555, 'https://lh3.googleusercontent.com/proxy/9NHSzm-vvUwybixQmIrhhngRW1ORRsCvIhmM-nAyFN_viUrcVtM8uWvxo4fyMLVDqwDVLZ885lSlSrSndYJoBLXmxXGFdJkCj9Tk6DfxmNYo4rQmYqmidoBh0NUyODukKQ', 50, 2000)
 
 
+-- ALTER TABLE houses ADD COLUMN img TEXT;
+
 -- {
 -- 	"name": "Pinky",
 -- 	"address": "Northsouth of the Church",
