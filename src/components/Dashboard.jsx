@@ -21,7 +21,7 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    const houseMap = this.state.houses.map((house, i) => <House key={i} house={house.house} />)
+    const houseMap = this.state.houses.map((house, i) => <House key={i} house={house} />)
     return (
       <div>
         <h2>Dashboard</h2>
